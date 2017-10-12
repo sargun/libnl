@@ -12,3 +12,7 @@ fi
 ./configure
 make CFLAGS="$CFLAGS"
 make CFLAGS="$CFLAGS" check
+
+pushd doc
+make gendoc
+popd

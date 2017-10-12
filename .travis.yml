@@ -4,5 +4,11 @@ compiler:
   - clang
 
 before_install:
+  - sudo apt-get -qq update && apt-get install -y mscgen asciidoc doxygen
 
 script: ./.travis/run.sh
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: docs/
